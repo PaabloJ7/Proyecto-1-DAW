@@ -23,6 +23,37 @@
     <input type="submit" value="Modificar Usuario">
 </form>
 
+<h2>Mostrar todos los usuarios</h2>
+<li><a href="mostrarUsuario.jsp">Ver todos los usuarios</a></li>
+
 
 </body>
 </html>
+<%@ page import="java.sql.*" %>
+
+<%
+    if(session.getAttribute("login") == null) {
+        response.sendRedirect("../Login/index.jsp");
+    }
+%>
+
+<%
+    try {
+        Class.forName("com.mysql.jdbc.Driver"); // load driver
+
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbuser", "root", ""); // create connection
+
+        PreparedStatement pstmt = con.prepareStatement("select * from login"); // SQL query to retrieve all user data
+        ResultSet rs = pstmt.executeQuery(); // execute query
+
+%>
+
+
+</body>
+</html>
+<%
+        con.close(); // close connection
+    } catch(Exception e) {
+        out.println(e);
+    }
+%>

@@ -15,7 +15,7 @@
     stmt.setInt(1, messageId);
     ResultSet rs = stmt.executeQuery();
     rs.next();
-    String username = rs.getString("username");
+    String firstname = rs.getString("firstname");
     String message = rs.getString("message");
     String createdAt = rs.getString("created_at");
 
@@ -38,8 +38,8 @@
 
 <table>
     <tr>
-        <td><strong>Username:</strong></td>
-        <td><%= username %></td>
+        <td><strong>firstname:</strong></td>
+        <td><%= firstname %></td>
     </tr>
     <tr>
         <td><strong>Message:</strong></td>
@@ -54,8 +54,6 @@
 <h2>Responder al mensaje</h2>
 <form action="agregarrespuesta.jsp" method="post">
     <input type="hidden" name="message_id" value="<%= messageId %>">
-    <label>Username:</label>
-    <input type="text" name="username"><br>
     <label>Reply:</label>
     <textarea name="reply"></textarea><br>
     <input type="submit" value="Send">
@@ -64,13 +62,13 @@
 <%
     // Mostrar los datos del mensaje y las respuestas en la página
     while (rs.next()) {
-        String replyUsername = rs.getString("username");
+        String replyfirstname = rs.getString("firstname");
         String reply = rs.getString("reply");
         String replyCreatedAt = rs.getString("created_at");
 %>
 
 <div class="reply">
-    <a><strong>Username:</strong> <%= replyUsername%></a>
+    <a><strong>firstname:</strong> <%= replyfirstname%></a>
     <br>
     <a><strong>Message:</strong> <%= reply%></a>
     <br>

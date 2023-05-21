@@ -16,38 +16,38 @@ try
 
 	if(request.getParameter("btn_login")!=null) //check login button click event not null
 	{
-		String dbemail,dbpassword;
+		String dbfirstname,dbpassword;
 		
-		String email,password;
+		String firstname,password;
 		
-		email=request.getParameter("txt_email"); //txt_email
+		firstname=request.getParameter("txt_firstname"); //txt_firstname
 		password=request.getParameter("txt_password"); //txt_password
 		
 		PreparedStatement pstmt=null; //create statement
 		
-		pstmt=con.prepareStatement("select * from login where email=? AND password=?"); //sql select query
-		pstmt.setString(1,email);
+		pstmt=con.prepareStatement("select * from login where firstname=? AND password=?"); //sql select query
+		pstmt.setString(1,firstname);
 		pstmt.setString(2,password);
 		
 		ResultSet rs=pstmt.executeQuery(); //execute query and store in resultset object rs.
 		
 		if(rs.next())
 		{
-			dbemail=rs.getString("email");
+			dbfirstname=rs.getString("firstname");
 			dbpassword=rs.getString("password");
-			if(email.equals("admin@admin.com") && password.equals("admin")) {
-				response.sendRedirect("admin.jsp"); // redirigir al usuario admin a admin.jsp
+			if(firstname.equals("admin") && password.equals("admin")) {
+				response.sendRedirect("../Admin/admin.jsp"); // redirigir al usuario admin a admin.jsp
 			}
-			if(email.equals(dbemail) && password.equals(dbpassword))
+			if(firstname.equals(dbfirstname) && password.equals(dbpassword))
 			{
-				session.setAttribute("login", dbemail);
+				session.setAttribute("login", dbfirstname);
 					response.sendRedirect("welcome.jsp"); // redirigir al usuario
 				} else {
-					session.setAttribute("login", dbemail);
+					session.setAttribute("login", dbfirstname);
 					response.sendRedirect("index.jsp");
 				}
 			} else {
-				request.setAttribute("errorMsg", "invalid email or password");
+				request.setAttribute("errorMsg", "invalid user or password");
 			}
 
 		}
@@ -80,14 +80,14 @@ catch(Exception e)
 		
 		function validate()
 		{
-			var email = document.myform.txt_email;
+			var firstname = document.myform.txt_firstname;
 			var password = document.myform.txt_password;
 				
-			if (email.value == null || email.value == "") //check email textbox not blank
+			if (firstname.value == null || firstname.value == "") //check firstname textbox not blank
 			{
-				window.alert("please enter email ?"); //alert message
-				email.style.background = '#f08080';
-				email.focus();
+				window.alert("please enter firstname ?"); //alert message
+				firstname.style.background = '#f08080';
+				firstname.focus();
 				return false;
 			}
 			if (password.value == null || password.value == "") //check password textbox not blank
@@ -122,7 +122,7 @@ catch(Exception e)
 					<%
 					if(request.getAttribute("errorMsg")!=null)
 					{
-						out.println(request.getAttribute("errorMsg")); //error message for email or password 
+						out.println(request.getAttribute("errorMsg")); //error message for firstname or password 
 					}
 					%>
 					</p>
@@ -131,8 +131,8 @@ catch(Exception e)
 
                     <div class="form-row">
                         <label>
-                            <span>Email</span>
-                            <input type="text" name="txt_email" id="email" placeholder="enter email">
+                            <span>firstname</span>
+                            <input type="text" name="txt_firstname" id="firstname" placeholder="enter firstname">
                         </label>
                     </div>
 

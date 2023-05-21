@@ -2,7 +2,7 @@
 <%
     // Obtener los datos del formulario
     int messageId = Integer.parseInt(request.getParameter("message_id"));
-    String username = request.getParameter("username");
+    String firstname = (String) session.getAttribute("login");
     String reply = request.getParameter("reply");
 
     // Establecer la conexión a la base de datos
@@ -12,9 +12,9 @@
     Connection conn = DriverManager.getConnection(url, user, password);
 
     // Insertar la respuesta en la tabla de respuestas
-    PreparedStatement stmt = conn.prepareStatement("INSERT INTO replies (message_id, username, reply) VALUES (?, ?, ?)");
+    PreparedStatement stmt = conn.prepareStatement("INSERT INTO replies (message_id, firstname, reply) VALUES (?, ?, ?)");
     stmt.setInt(1, messageId);
-    stmt.setString(2, username);
+    stmt.setString(2, firstname);
     stmt.setString(3, reply);
     stmt.executeUpdate();
 

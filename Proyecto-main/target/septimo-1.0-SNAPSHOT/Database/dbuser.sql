@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2023 a las 18:44:35
+-- Tiempo de generación: 21-05-2023 a las 20:29:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(10) DEFAULT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `firstname`, `lastname`, `email`, `password`, `habilidad`, `habilidad2`) VALUES
 (1, 'admin', 'admin', 'admin@admin.com', 'admin', NULL, NULL),
-(51, NULL, 'pablo', 'pablo@pablo.com', '1', NULL, NULL),
+(51, 'pablo', 'pablo', 'pablo@pablo.com', '1', NULL, NULL),
 (70, NULL, 'skill', 'skill@skill.com', NULL, NULL, 'skill2');
 
 -- --------------------------------------------------------
@@ -54,7 +54,7 @@ INSERT INTO `login` (`id`, `firstname`, `lastname`, `email`, `password`, `habili
 
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
   `message` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -63,9 +63,10 @@ CREATE TABLE `messages` (
 -- Volcado de datos para la tabla `messages`
 --
 
-INSERT INTO `messages` (`id`, `username`, `message`, `created_at`) VALUES
-(9, 'Nueva ayuda 1', 'Nueva ayuda 1', '2023-05-21 16:26:38'),
-(10, 'Nueva ayuda 2', 'Nueva ayuda 2', '2023-05-21 16:26:41');
+INSERT INTO `messages` (`id`, `firstname`, `message`, `created_at`) VALUES
+(10, 'Nueva ayud', 'Nueva ayuda 2', '2023-05-21 16:26:41'),
+(13, '', 'yyyy', '2023-05-21 17:21:25'),
+(15, '', 'Azuil', '2023-05-21 17:53:31');
 
 -- --------------------------------------------------------
 
@@ -76,7 +77,7 @@ INSERT INTO `messages` (`id`, `username`, `message`, `created_at`) VALUES
 CREATE TABLE `replies` (
   `id` int(11) NOT NULL,
   `message_id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
   `reply` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -85,10 +86,13 @@ CREATE TABLE `replies` (
 -- Volcado de datos para la tabla `replies`
 --
 
-INSERT INTO `replies` (`id`, `message_id`, `username`, `reply`, `created_at`) VALUES
+INSERT INTO `replies` (`id`, `message_id`, `firstname`, `reply`, `created_at`) VALUES
 (5, 10, 'Respondo 1', 'Respondo 1', '2023-05-21 16:26:48'),
 (6, 10, 'Respondo 2', 'Respondo 2', '2023-05-21 16:26:51'),
-(7, 10, 'ROemeo', 'ee', '2023-05-21 16:39:08');
+(7, 10, 'ROemeo', 'ee', '2023-05-21 16:39:08'),
+(8, 15, NULL, '1', '2023-05-21 17:55:30'),
+(9, 15, NULL, 'acghuuus', '2023-05-21 17:58:43'),
+(10, 15, NULL, 'egege', '2023-05-21 18:07:20');
 
 --
 -- Índices para tablas volcadas
@@ -98,7 +102,9 @@ INSERT INTO `replies` (`id`, `message_id`, `username`, `reply`, `created_at`) VA
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `firstname` (`firstname`),
+  ADD UNIQUE KEY `firstname_2` (`firstname`);
 
 --
 -- Indices de la tabla `messages`
@@ -127,13 +133,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de la tabla `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas

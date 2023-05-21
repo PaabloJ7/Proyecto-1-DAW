@@ -20,7 +20,7 @@
 		<ul>
 			<li><a href="#">Inicio</a></li>
 			<li><a href="#">Sobre Nosotros</a></li>
-			<li><a href="../Perfil/usuario.jsp">Perfil</a></li>
+			<li><a href="../Perfil/perfil.jsp">Perfil</a></li>
 			<li><a href="../Ayudas/mensajes.jsp">Foro Ayudas</a></li>
 		</ul>
 	</div>

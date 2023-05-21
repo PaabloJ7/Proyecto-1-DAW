@@ -23,11 +23,11 @@
     // Mostrar los mensajes en una tabla
     out.println("<table>");
     while (rs.next()) {
-        String username = rs.getString("username");
+        String firstname = rs.getString("firstname");
         String message = rs.getString("message");
         String createdAt = rs.getString("created_at");
         int messageId = rs.getInt("id");
-        out.println("<tr><td>" + username + "</td><td><a href=\"detalles.jsp?id=" + messageId + "\">" + message + "</a></td><td>" + createdAt + "</td></tr>");
+        out.println("<tr><td>" + firstname + "</td><td><a href=\"detalles.jsp?id=" + messageId + "\">" + message + "</a></td><td>" + createdAt + "</td></tr>");
     }
     out.println("</table>");
 
@@ -39,8 +39,6 @@
 
 <h2>Crear ayuda</h2>
 <form action="agregarmensaje.jsp" method="post">
-    <label>Usuario_</label>
-    <input type="text" name="username"><br>
     <label>Mensaje:</label>
     <textarea name="message"></textarea><br>
     <input type="submit" value="Send">
