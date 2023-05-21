@@ -1,0 +1,45 @@
+/* Estilos para modificarUsuario.jsp */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap%27');
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+*{
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 200px;
+    padding: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

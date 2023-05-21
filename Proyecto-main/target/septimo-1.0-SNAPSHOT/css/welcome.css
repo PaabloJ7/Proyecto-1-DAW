@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+*{
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+}
+
+body{
+    background-color: rgb(218, 218, 218);
+    font-family: 'Titillium Web', sans-serif;
+    display: grid;
+}
+
+/* NAVBAR */
+.navbar{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 100px;
+}
+
+.navbar .logo a{
+    font-size: 35px;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+
+.navbar ul li a{
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar ul li a:hover{
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-size: 22px;
+    transition: .4s;
+}
+
+/* PRIMER CONTAINER */
+.container1{
+    width: 100%;
+    height: 60vh;
+    padding: 0 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container1 h1{
+    color: white;
+    font-size: 80px;
+    text-align: center;
+}
+
+.container1 .boton{
+    text-align: center;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 22px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 200px;
+    margin: auto;
+}
+
+.container1 .boton:hover{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+/* SEGUNDO CONTAINER */
+.container2{
+    min-height: 50vh;
+    background-color: rgb(218, 218, 218);
+    align-items: center;
+}
+
+.container2 h2{
+    padding-top: 3%;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.tarjetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    gap: 40px;
+    margin-top: 3%;
+
+}
+
+.tarjeta1{
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://imgcom.masterd.es/49/blog/2023/02/42551.jpeg);
+}
+
+.tarjeta1 p{
+    margin-top: 45%;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.tarjeta2{
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://www.servihogar-ecija.com/wp-content/uploads/2019/11/trabajos-de-albaileria.jpg);
+}
+
+.tarjeta2 p{
+    margin-top: 45%;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.tarjeta3{
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://www.inprolospedroches.com/wp-content/uploads/2015/11/Fontaneria3.jpg);
+}
+
+.tarjeta3 p{
+    margin-top: 45%;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.tarjeta4{
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    background-size: cover ;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://www.avantservicios.com/wp-content/uploads/2019/04/servicio_jardineria_avantservicios.jpg);
+}
+
+.tarjeta4 p{
+    margin-top: 45%;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    font-size: 12px;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.fa {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    background-color: #222;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
