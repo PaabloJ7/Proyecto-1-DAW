@@ -18,9 +18,9 @@
 
     <ul class="nav-links">
         <li><a href="inicio.jsp">Inicio</a></li>
-        <li><a href="jsp/sobrenosotros.jsp">Sobre nosotros</a></li>
-        <li><a href="contacto.jsp">Contacto</a></li>
-        <li><a href="index.jsp">Login</a></li>
+        <li><a href="sobrenosotros.jsp">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="Login/index.jsp">Login</a></li>
     </ul>
 
 </nav>
@@ -30,7 +30,7 @@
         <h1>¡Bienvenido a ShareSkillz!</h1>
     </div>
     <div class="btn">
-        <a href="index.jsp" class="btn">Anuncios</a>
+        <a href="Login/index.jsp" class="btn">Anuncios</a>
     </div>
 </section>
 <!-- CARDS -->
@@ -52,7 +52,7 @@
     </div>
 </section>
 <!-- FOOTER -->
-<footer>
+<footer id="contacto">
     <div class="footer-wrapper">
         <div class="footer-section">
             <h3>Acerca de nosotros</h3>
