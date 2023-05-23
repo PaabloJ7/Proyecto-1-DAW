@@ -20,24 +20,50 @@
 
     Connection connection = null;
     PreparedStatement statement = null;
+    ResultSet resultSet = null;
     try {
       Class.forName("com.mysql.jdbc.Driver");
       connection = DriverManager.getConnection(connectionString, username, password);
 
-      // Realiza la consulta para modificar los datos del usuario con el ID proporcionado
-      String query = "UPDATE login SET firstname = ?, password = ?, habilidad = ? WHERE firstname = ?";
-      statement = connection.prepareStatement(query);
-      statement.setString(1, nuevoNombre);
-      statement.setString(2, nuevocontrasena);
-      statement.setString(3, nuevoHabilidad);
-      statement.setString(4, firstname);
-      statement.executeUpdate();
+      // Consulta los datos actuales del usuario
+      String selectQuery = "SELECT * FROM login WHERE firstname = ?";
+      statement = connection.prepareStatement(selectQuery);
+      statement.setString(1, firstname);
+      resultSet = statement.executeQuery();
 
-      out.println("Datos del usuario modificados exitosamente.");
+      if (resultSet.next()) {
+        // Obtén los datos del usuario de la base de datos
+        String usernameDB = resultSet.getString("firstname");
+        String passwordDB = resultSet.getString("password");
+        String habilidadDB = resultSet.getString("habilidad");
+
+        // Muestra los datos del usuario antes de la modificación
+        out.println("Datos actuales del usuario:");
+        out.println("<br>");
+        out.println("Nombre de usuario: " + usernameDB);
+        out.println("<br>");
+        out.println("Contraseña: " + passwordDB);
+        out.println("<br>");
+        out.println("Habilidad: " + habilidadDB);
+        out.println("<br>");
+
+        // Realiza la consulta para modificar los datos del usuario con el ID proporcionado
+        String updateQuery = "UPDATE login SET password = ?, habilidad = ? WHERE firstname = ?";
+        statement = connection.prepareStatement(updateQuery);
+        statement.setString(1, nuevocontrasena);
+        statement.setString(2, nuevoHabilidad);
+        statement.setString(3, firstname);
+        statement.executeUpdate();
+
+        out.println("Datos del usuario modificados exitosamente.");
+      }
     } catch (Exception e) {
       out.println("Error al modificar los datos del usuario: " + e.getMessage());
     } finally {
       // Cierre de recursos
+      if (resultSet != null) {
+        resultSet.close();
+      }
       if (statement != null) {
         statement.close();
       }
@@ -54,6 +80,7 @@
   <meta charset="UTF-8">
   <title>Modificar Usuario</title>
   <link rel="stylesheet" href="../css/modificarUsuario.css">
+  <link rel="stylesheet" href="../css/mensajes.css">
 
 </head>
 <body>
@@ -61,10 +88,6 @@
 
 <form method="post" action="perfil.jsp">
   <input type="hidden" name="firstname" value="<%=firstname%>">
-
-  <label>Nuevo Nombre:</label>
-  <input type="text" name="nuevoNombre">
-  <br>
 
   <label>Nueva Contraseña:</label>
   <input type="password" name="nuevocontrasena">
@@ -76,6 +99,7 @@
 
   <input type="submit" value="Modificar Usuario">
 </form>
-<a href="../welcome.jsp">Volver a la pagina del Admin</a>
+<a href="../Login/welcome.jsp">Volver a la página de inicio</a>
 </body>
 </html>
+

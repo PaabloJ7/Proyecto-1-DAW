@@ -19,7 +19,7 @@
 	<div class="links">
 		<ul>
 			<li><a href="#">Inicio</a></li>
-			<li><a href="#">Sobre Nosotros</a></li>
+			<li><a href="../sobrenosotros.jsp">Sobre Nosotros</a></li>
 			<li><a href="../Perfil/perfil.jsp">Perfil</a></li>
 			<li><a href="../Ayudas/mensajes.jsp">Foro Ayudas</a></li>
 		</ul>
@@ -27,7 +27,9 @@
 	<div class="login">
 		<ul>
 			<li>
-				(<a href="logout.jsp">Salir</a>)
+				<%String firstname = (String) session.getAttribute("login");%>
+				<a><%= firstname %></a>
+				<a href="logout.jsp">Salir</a>
 			</li>
 		</ul>
 	</div>

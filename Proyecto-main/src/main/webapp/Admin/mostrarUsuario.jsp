@@ -17,27 +17,31 @@
 
 %>
 <!DOCTYPE html>
+<html lang = "es">
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" href="../css/mensajes.css">
 </head>
 <body>
 <div class="main-content">
     <h1>Perfil</h1>
     <table>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
             <th>Email</th>
+            <th>Contraseña</th>
         </tr>
         <% while(rs.next()) { %>
         <tr>
             <td><%= rs.getString("firstname") %></td>
             <td><%= rs.getString("lastname") %></td>
             <td><%= rs.getString("email") %></td>
+            <td><%= rs.getString("password")%></td>
         </tr>
         <% } %>
     </table>

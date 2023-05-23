@@ -86,7 +86,7 @@
             </p>
         </div>
     </div>
-
 </div>
+<a href="inicio.jsp">Volver al inicio </a>
 </body>
 </html>

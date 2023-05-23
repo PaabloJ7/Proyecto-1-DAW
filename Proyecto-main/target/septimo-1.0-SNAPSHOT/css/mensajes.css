@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap%27');
 * {
   font-family: 'Titillium Web', sans-serif;
+  padding: 10%;
+  margin: 10%;
 
 }
 

@@ -85,14 +85,14 @@ catch(Exception e)
 				
 			if (firstname.value == null || firstname.value == "") //check firstname textbox not blank
 			{
-				window.alert("please enter firstname ?"); //alert message
+				window.alert("porfavor ingrese nombre de usuario ?"); //alert message
 				firstname.style.background = '#f08080';
 				firstname.focus();
 				return false;
 			}
 			if (password.value == null || password.value == "") //check password textbox not blank
 			{
-				window.alert("please enter password ?"); //alert message
+				window.alert("porfavor ingrese contraseña ?"); //alert message
 				password.style.background = '#f08080'; 
 				password.focus();
 				return false;
@@ -115,7 +115,7 @@ catch(Exception e)
                 <div class="form-white-background">
 
                     <div class="form-title-row">
-                        <h1>Login</h1>
+                        <h1>Iniciar sesion</h1>
                     </div>
 					
 					<p style="color:red">				   		
@@ -131,23 +131,23 @@ catch(Exception e)
 
                     <div class="form-row">
                         <label>
-                            <span>firstname</span>
-                            <input type="text" name="txt_firstname" id="firstname" placeholder="enter firstname">
+                            <span>Usuario</span>
+                            <input type="text" name="txt_firstname" id="firstname" placeholder="Ingresar usuario">
                         </label>
                     </div>
 
                     <div class="form-row">
                         <label>
-                            <span>Password</span>
-                            <input type="password" name="txt_password" id="password" placeholder="enter password">
+                            <span>Contraseña</span>
+                            <input type="password" name="txt_password" id="password" placeholder="Ingresar contraseña">
                         </label>
                     </div>
 
-					<input type="submit" name="btn_login" value="Login">
+					<input type="submit" name="btn_login" value="Inicir sesion">
                     
                 </div>
 
-				<a href="register.jsp" class="form-log-in-with-existing">You Don't have an account? <b> Register here </b></a>
+				<a href="register.jsp" class="form-log-in-with-existing">No tienes cuenta? <b> Registrate aqui </b></a>
 
             </div>
 

@@ -56,7 +56,7 @@
     <input type="hidden" name="message_id" value="<%= messageId %>">
     <label>Reply:</label>
     <textarea name="reply"></textarea><br>
-    <input type="submit" value="Send">
+    <input type="submit" value="Enviar">
 </form>
 <h2>Respuestas:</h2>
 <%

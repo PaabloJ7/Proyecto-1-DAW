@@ -41,7 +41,7 @@
 <form action="agregarmensaje.jsp" method="post">
     <label>Mensaje:</label>
     <textarea name="message"></textarea><br>
-    <input type="submit" value="Send">
+    <input type="submit" value="Enviar">
 </form>
 
 <a href="../Login/welcome.jsp">Volver al inicio</a>
