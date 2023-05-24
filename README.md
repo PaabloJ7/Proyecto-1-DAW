@@ -24,15 +24,16 @@ Realizado por Romeo Dominguez y Pablo de la Sierra.
 - Hemos creado un foro donde pueda participar cualquier usuario. Hemos organizado nuestro foro como si fuera "discusiones", es decir, el usuario que ha pedido ayudar crea el primer mensaje, despues si otro usuario quiere ayudarle entrara en esa "discusion" y podra enviar un mensaje ayudando al otro usuario. Hemos añadido la fecha de creacion de la "discusion" para concienciar al usuario que quiera escribir en el foro el dia de creacion que tuvo esa ayuda.
 - Ademas hemos añadido un buscador para que el usuario pueda buscar por habilidades o palabras clave.
 
+
 ## 5. Base de datos
 La base de datos dbuser la hemos diseñado para gestionar la información relacionada con usuarios, mensajes y respuestas de la pagina web.
 - Breve descripcion de la estructura y relaciones entre las tablas:
 - Tabla login: Esta tabla almacena la información de los usuarios registrados en el sistema.
-- La tabla login tiene una relación uno a muchos con las tablas messages y replies, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario.
+    - La tabla login tiene una relación uno a muchos con las tablas messages y replies, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario.
 - Tabla messages: Esta tabla almacena los mensajes enviados por los usuarios. 
-- La tabla messages tiene una relación muchos a uno con la tabla login, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió el mensaje.
+    - La tabla messages tiene una relación muchos a uno con la tabla login, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió el mensaje.
 - Tabla replies: Esta tabla almacena las respuestas a los mensajes. 
-- La tabla replies tiene relaciones muchos a uno tanto con la tabla login como con la tabla messages. La columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió la respuesta, y la columna message_id se utiliza como clave externa que referencia al mensaje al que se está respondiendo.
+    - La tabla replies tiene relaciones muchos a uno tanto con la tabla login como con la tabla messages. La columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió la respuesta, y la columna message_id se utiliza como clave externa que referencia al mensaje al que se está respondiendo.
 - Este es el diagrama de clases:
 ![Screenshot](img/image-20230523224759681.png)
 
