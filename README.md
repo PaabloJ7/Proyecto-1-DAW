@@ -26,8 +26,7 @@ Realizado por Romeo Dominguez y Pablo de la Sierra.
 
 
 ## Base de datos
-La base de datos dbuser la hemos diseñado para gestionar la información relacionada con usuarios, mensajes y respuestas de la pagina web.
-- Breve descripcion de la estructura y relaciones entre las tablas:
+La base de datos dbuser la hemos diseñado para gestionar la información relacionada con usuarios, mensajes y respuestas de la pagina web. A continuacion una breve explicacion de la estructura y las relaciones establecidas entre tablas
 - Tabla login: Esta tabla almacena la información de los usuarios registrados en el sistema.
     - La tabla login tiene una relación uno a muchos con las tablas messages y replies, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario.
 - Tabla messages: Esta tabla almacena los mensajes enviados por los usuarios. 
