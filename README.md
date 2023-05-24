@@ -25,7 +25,7 @@ Realizado por Romeo Dominguez y Pablo de la Sierra.
 - Ademas hemos añadido un buscador para que el usuario pueda buscar por habilidades o palabras clave.
 
 
-## 5. Base de datos
+## Base de datos
 La base de datos dbuser la hemos diseñado para gestionar la información relacionada con usuarios, mensajes y respuestas de la pagina web.
 - Breve descripcion de la estructura y relaciones entre las tablas:
 - Tabla login: Esta tabla almacena la información de los usuarios registrados en el sistema.
