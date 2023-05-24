@@ -35,7 +35,7 @@ La base de datos dbuser la hemos diseñado para gestionar la información relaci
 - Tabla replies: Esta tabla almacena las respuestas a los mensajes. 
     - La tabla replies tiene relaciones muchos a uno tanto con la tabla login como con la tabla messages. La columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió la respuesta, y la columna message_id se utiliza como clave externa que referencia al mensaje al que se está respondiendo.
 #### Este es el diagrama de clases:
-![Screenshot|100](img/image-20230523224759681.png)
+![Screenshot|10](img/image-20230523224759681.png)
 
 
 ## Metodo de trabajo
