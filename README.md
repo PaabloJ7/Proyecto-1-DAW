@@ -25,13 +25,14 @@ Realizado por Romeo Dominguez y Pablo de la Sierra.
 - Ademas hemos añadido un buscador para que el usuario pueda buscar por habilidades o palabras clave.
 
 ### 5. Base de datos
-- La base de datos la hemos llamada denominada dbuser que contiene tablas relacionadas con la autenticación de usuarios y mensajes. esta compuesta de las siguientes tablas:
-- login: Esta tabla almacena la información de inicio de sesión de los usuarios, incluyendo el ID, nombre, apellido, correo electrónico, contraseña y habilidad.
-
-- messages: En esta tabla se guardan los mensajes enviados en la seccion de ayudas, incluyendo el ID, el mensaje en sí, la fecha y hora de creación, y el nombre del remitente.
-
-- replies: Esta tabla almacena las respuestas a los mensajes, incluyendo el ID, el ID del mensaje al que se responde, el contenido de la respuesta, la fecha y hora de creación, y el nombre del remitente de la respuesta.
-
+La base de datos dbuser la hemos diseñado para gestionar la información relacionada con usuarios, mensajes y respuestas de la pagina web.
+- Breve descripcion de la estructura y relaciones entre las tablas:
+- Tabla login: Esta tabla almacena la información de los usuarios registrados en el sistema.
+- La tabla login tiene una relación uno a muchos con las tablas messages y replies, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario.
+- Tabla messages: Esta tabla almacena los mensajes enviados por los usuarios. 
+- La tabla messages tiene una relación muchos a uno con la tabla login, donde la columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió el mensaje.
+- Tabla replies: Esta tabla almacena las respuestas a los mensajes. 
+- La tabla replies tiene relaciones muchos a uno tanto con la tabla login como con la tabla messages. La columna firstname se utiliza como clave externa que referencia al nombre del usuario que envió la respuesta, y la columna message_id se utiliza como clave externa que referencia al mensaje al que se está respondiendo.
 - Este es el diagrama de clases:
 ![Screenshot](img/image-20230523224759681.png)
 
