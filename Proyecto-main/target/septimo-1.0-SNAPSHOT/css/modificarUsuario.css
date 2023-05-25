@@ -1,0 +1,91 @@
+/* Estilos para modificarUsuario.jsp */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap%27%27');
+
+*{
+align-content: center;
+text-align: center;
+align-items: center;
+font-family: 'Titillium Web', sans-serif;
+}
+body {
+
+background-color: #e4e4e4;
+}
+
+h1 {
+color: black;
+}
+
+.modificar{
+padding-top: 10%;
+width: 570px;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+form {
+width: 570px;
+margin: 0 auto;
+box-sizing: border-box;
+background-color: white;
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+margin-bottom: 35px;
+border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+input[type="submit"] {
+    border-radius: 5px;
+    width: 230px;
+    color: #66629d;
+    background-color: #c3cdf0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+
+input[type="submit"]:hover {
+    background-color: #66629d;
+    color: #c3cdf0;
+    transition: 0.4s;
+}
+
+.boton{
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+
+a{
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: #66629d;
+    color: #c3cdf0;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+a:hover{
+    background-color: #c3cdf0;
+    color: #66629d;
+    transition: 0.4s;
+}
