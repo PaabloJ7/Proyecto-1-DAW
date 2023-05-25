@@ -38,5 +38,5 @@ La base de datos dbuser la hemos diseñado para gestionar la información relaci
 
 
 ## Metodo de trabajo
-- Hemos trabajado de manera simultanea, primero creamos la idea del proyecto y creamos un esquema basico de lo que queriamos que contuviese el mismo. Hemos divido los apartados del proyecto para poder realizarlo mas facilmente y una vez hemos tenido que entrar en mas detalles o pulir alguna funcion hemos trabajado en grupo. Con esta forma de trabajo hemos conseguido realizar los requisitos minimos facilmente y una vez los complimos pulir el proyecto he implmentar mejoras en el mismo.
+Hemos trabajado de manera simultanea, primero creamos la idea del proyecto y creamos un esquema basico de lo que queriamos que contuviese el mismo. Hemos divido los apartados del proyecto para poder realizarlo mas facilmente y una vez hemos tenido que entrar en mas detalles o pulir alguna funcion hemos trabajado en grupo. Con esta forma de trabajo hemos conseguido realizar los requisitos minimos facilmente y una vez los complimos pulir el proyecto he implmentar mejoras en el mismo.
 
