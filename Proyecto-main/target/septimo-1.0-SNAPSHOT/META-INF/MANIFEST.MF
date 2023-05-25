@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Created-By: IntelliJ IDEA
-Built-By: Pablo de la Sierra
-Build-Jdk: Oracle OpenJDK version 20.0.1
-
